@@ -1,0 +1,179 @@
+doctype html
+html(lang='en')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(charset='utf-8')
+    head
+        title report
+        style(type='text/css').
+            body {
+                font-weight: 300;
+                line-height: 0.8em;
+                direction: rtl;
+                color: #A7A1AE;
+            }
+
+            .container table {
+                border-collapse: collapse;
+                text-align: left;
+                width: 100%;
+            }
+
+            .container {
+                font: normal 12px/150% Arial, Helvetica, sans-serif;
+                background: #fff;
+                overflow: hidden;
+                border: 1px solid #006699;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+            }
+
+            .container table td, .container table th {
+                padding: 3px;
+            }
+
+            .container table th{
+                border: 1px solid #E1EEF4;
+                background-color: #eeeeee;
+                font-size: 8px;
+                font-weight: bold;
+            }
+
+            .container table tbody td {
+                color: #00557F;
+                border: 1px solid #E1EEF4;
+                font-size: 8px;
+                font-weight: normal;
+                direction: ltr;
+                text-align: right;
+            }
+
+            .container th{
+                font-size: 8px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .container table tbody .alt td {
+                background: #E1EEf4;
+                color: #00557F;
+            }
+
+            .container table tbody td:first-child {
+                border-right: none;
+            }
+
+            .header {
+                background-color: #eeeeee;
+            }
+
+            .location {
+                width: 14% !important;
+            }
+
+            .map {
+                width: 18% !important;
+            }
+
+            .address {
+                width: 53% !important;
+            }
+
+            .speed {
+                width: 3% !important;
+            }
+
+            .time {
+                width: 16% !important;
+            }
+
+            .notfound {
+                padding: 0px 15px;
+            }
+
+    body
+        .container
+            table
+                tbody
+                        tr
+                            td.header نام گزارش
+                            td #{title}
+                            td.header تاریخ گزارش
+                            td #{persianDate(date)}
+                        tr
+                            td.header از تاریخ
+                            td #{persianDate(startDate) || '-----'}
+                            td.header تا تاریخ
+                            td #{persianDate(endDate) || '-----'}
+                        tr
+                            td.header از سرعت
+                            td #{minSpeed ? `${minSpeed} KM/h` : '-----'}
+                            td.header تا سرعت
+                            td #{maxSpeed ? `${maxSpeed} KM/h` : '-----'}
+                        tr
+                            td.header گزارش گیرنده
+                            td #{reporter.firstname} #{reporter.lastname}
+                            td.header شماره تماس
+                            td #{reporter.mobileNumber}
+
+        for vehicle in vehiclesLocationData
+            hr
+            .container
+                table
+                    tbody
+                            tr
+                                td.header سریال دستگاه
+                                td #{vehicle.device.IMEI}
+                                td.header شماره سیم کارت
+                                td #{vehicle.device.simNumber}
+                            tr
+                                td.header نام راننده
+                                td #{vehicle.driver.name}
+                                td.header شماره تماس راننده
+                                td #{vehicle.driver.phoneNumber}
+                            tr
+                                td.header نام گروه
+                                td #{vehicle.groups.join('، ')}
+                                td.header نوع وسیله
+                                td #{vehicle.device.type}
+                            tr
+                                td.header آدرس آخرین موقعیت
+                                td #{vehicle.lastLocation.address || '-----'}
+                                td.header زمان آخرین موقعیت
+                                td #{persianDate(vehicle.lastLocation.date) || '-----'}
+                            tr
+                                td.header مسافت طی شده در این بازه
+                                td #{distance(vehicle)} KM
+                                td.header میانگین سرعت
+                                td #{round(vehicle.avgSpeed)} KM/h
+                            tr
+                                td.header کمترین سرعت
+                                td #{vehicle.minSpeed} KM/h
+                                td.header بیشترین سرعت
+                                td #{vehicle.maxSpeed} KM/h
+
+            hr
+            .container
+                table
+                    thead
+                        tr
+                            th.time زمان
+                            th.location موقعیت جغرافیایی
+                            th.speed سرعت
+                            th.address آدرس
+                            th.map مشاهده بر روی نقشه
+                    tbody
+                        each location in vehicle.locations
+                            tr
+                                td.time #{persianDate(location.date)}
+                                td.location #{round(location.latitude, 4)}, #{round(location.longitude, 4)}
+                                td.speed #{location.speed}
+                                td.address #{location.address}
+                                td.map
+                                    a(href=location.url) مشاهده بر روی نقشه
+
+        else
+            hr
+            .container
+                p.notfound اطلاعاتی در این بازه وجود ندارد

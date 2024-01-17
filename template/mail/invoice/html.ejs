@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<title>keloud</title>
+<style type="text/css">
+    <!--
+    @import url("https://global.keloud.ir/mail/activation/font/stylesheet.css");
+
+    * {
+        font-family:Tahoma, Geneva, sans-serif;
+    }
+
+    img {
+        border: 0;
+    }
+
+    #page {
+        width: 800px;
+        margin: 0 auto;
+        padding: 15px;
+
+    }
+
+    #logo {
+        float: left;
+        margin: 0;
+    }
+
+    #address {
+        height: 181px;
+        margin-left: 250px;
+        float: right;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    tr.odd {
+        background: #e1ffe1;
+    }
+
+    -->
+</style>
+</head>
+<body>
+<div id="page">
+    <div id="logo">
+        <img src="https://global.keloud.ir/mail/activation/header.jpg" width="100%">
+    </div>
+    <!--end logo-->
+
+    <!--end address-->
+
+    <div id="content">
+        <hr>
+        <hr>
+        <table>
+            <tr>
+                <td>
+                    <table style="float:right; text-align:right; direction:rtl; width: 100%;display:inline-block;font-family: Tahoma;">
+                        <tr>
+                            <td>صادر کننده</td>
+                            <td>:</td>
+
+                            <td>شرکت کـاوه صنعت شریف</td>
+                        </tr>
+                        <tr>
+                            <td>تلفن تماس</td>
+                            <td>:</td>
+
+                            <td>021-84402</td>
+                        </tr>
+                        <tr>
+                            <td>کد اقتصادی</td>
+                            <td>:</td>
+                            <td>411445619798</td>
+                        </tr>
+                        <tr>
+                            <td>شناسه ملی</td>
+                            <td>:</td>
+
+
+                            <td>14003733925</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table style="float:right; text-align:right;direction:rtl; width: 100%;display:inline-block;">
+                        <tr>
+                            <td>پرداخت کننده</td>
+                            <td>:</td>
+                            <td><%= companyName %></td>
+
+                        </tr>
+                        <tr>
+                            <td>تلفن تماس</td>
+
+                            <td>:</td>
+                            <td><%= companyTel %></td>
+
+                        </tr>
+                        <tr>
+                            <td>کد اقتصادی</td>
+
+                            <td>:</td>
+                            <td><%= companyEconomicCode %></td>
+
+                        </tr>
+                        <tr>
+                            <td>شناسه ملی</td>
+                            <td>:</td>
+
+                            <td><%= companyNationalityId %></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table border="1" style="float:right; text-align:right; width: 100%;direction:rtl;">
+                        <tr>
+                            <td><strong>موارد فاکتور</strong></td>
+                            <td><strong>
+                                    قیمت به ریال
+                                </strong></td>
+                        </tr>
+                        <tr class="odd">
+                            <td><%= itemName %></td>
+                            <td><%= itemValue %></td>
+                        </tr>
+                        <tr class="odd">
+                            <td> مالیات</td>
+                            <td><%= taxValue %></td>
+                        </tr>
+                        <tr>
+                            <td><strong>مجموع</strong></td>
+                            <td><strong><%= invoiceValue %></strong></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+        <br>
+        <hr>
+        <img id="pg2" src="https://global.keloud.ir/mail/activation/qrcode.png" style="float:right;">
+        <hr>
+        <p>
+            <a style="transition: opacity 0.2s ease-in;color: #93a6ad;"
+               href="https://www.facebook.com/keloud.kaveh"><img
+                        style="border: 0;-ms-interpolation-mode: bicubic;vertical-align: middle;"
+                        src="https://global.keloud.ir/mail/activation/facebook.png" width="29" height="26"></a><a
+                    style="transition: opacity 0.2s ease-in;color: #93a6ad;"
+                    href="https://twitter.com/keloud_kaveh"><img
+                        style="border: 0;-ms-interpolation-mode: bicubic;vertical-align: middle;"
+                        src="https://global.keloud.ir/mail/activation/twitter.png" width="29" height="26"></a><a
+                    style="transition: opacity 0.2s ease-in;color: #93a6ad;"
+                    href="https://instagram.com/keloud.kaveh"><img
+                        style="border:0;-ms-interpolation-mode:bicubic;vertical-align:middle;"
+                        src="https://global.keloud.ir/mail/activation/instagram.png" width="29" height="26"></a><a
+                    style="transition: opacity 0.2s ease-in;color: #93a6ad;"
+                    href="https://www.linkedin.com/in/keloud-group-aa2ba7108"><img
+                        style="border: 0;-ms-interpolation-mode: bicubic;vertical-align: middle;"
+                        src="https://global.keloud.ir/mail/activation/linkedin.png" width="29" height="26"></a><a
+                    style="transition: opacity 0.2s ease-in;color: #93a6ad;" href="http://keloud.ir/"><img
+                        style="border: 0;-ms-interpolation-mode: bicubic;vertical-align: middle;"
+                        src="https://global.keloud.ir/mail/activation/website.png" width="29" height="26"></a>
+        </p>
+
+
+        <p>
+        <center>
+            <small><img id="pg" src="https://global.keloud.ir/mail/activation/pg.png">
+
+
+            </small>
+        </center>
+
+        </p>
+    </div>
+    <!--end content-->
+    <img src="https://global.keloud.ir/mail/activation/footer.jpg" width="100%"></div>
+</div><!--end page-->
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    </head>
+    <title>keloud</title>
+    <style type="text/css">
+        <!--
+        @font-face {
+            font-family: "CustomFont";
+            src: url("https://kavehglass.com/wp-content/themes/zerif-lite/font/IRANSansWeb.woff") format("woff");
+        }
+
+        * {
+            font-family: Tahoma, Geneva, sans-serif;
+        }
+
+        img {
+            border: 0;
+        }
+
+        #page {
+            width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        #logo {
+            margin: 0;
+        }
+
+        table, td, th {
+            border: #00557f 2px solid;
+        }
+
+        table {
+            direction: rtl;
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr.odd {
+            background: #808080;
+        }
+
+        -->
+    </style>
+</head>
+<body>
+<div id="page">
+    <div id="logo" style="text-align: center; ">
+        <img src="https://kavehglass.com/wp-content/uploads/2019/05/cropped-kaveh.png" alt="logo">
+    </div>
+    <div style="margin-right:auto; margin-left:auto; display:block; text-align:center;">
+        <h1 style="color:#000; font-family: 'B Yekan', Tahoma, Arial,serif; font-size:25px;">سامانه مدیریت ناوگان کاوه</h1>
+        <img src="http://31.47.39.172/assets/images/locations.png" alt="AVL"/>
+    </div>
+    <div id="content">
+        <br>
+        <br>
+        <h5 style="text-align: right; direction: rtl"> تاریخ: <%= today %></h5>
+
+        <p style="text-align: right">لیست ماشین‌ها در دسته‌بندی <%= groupName %> که بیشتر از ۵ روز از آخرین ارسال موقعیت مکانی آن‌ها می‌گذرد</p>
+
+        <table>
+            <tr>
+                <th>IMEI</th>
+                <th>نام راننده</th>
+                <th>پلاک</th>
+                <th>تعداد روزهای عدم دریافت موقیت مکانی</th>
+            </tr>
+            <% for(var i = 0; i < vehicles.length; i++) { %>
+                <tr class="<% (i%2 === 0) ? 'odd': '' %> ">
+                    <td><%= vehicles[i].IMEI %></td>
+                    <td><%= vehicles[i].driverName %></td>
+                    <td><%= vehicles[i].plate %></td>
+                    <td><%= vehicles[i].lastLocationDurationDays %></td>
+                </tr>
+            <% } %>
+        </table>
+
+        <div style="margin-right:auto; margin-left:auto; display:block; text-align:center; font-family:'B Koodak', Tahoma, Arial;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            شرکت بلور کاوه | تلفن تماس: 84400 | نشانی: تهران- انتهای اتوبان امام علی شمال- بلوار اوشان (مژدی)-پلاک 4
+            ساختمان کاوه <br/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

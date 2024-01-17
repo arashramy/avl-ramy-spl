@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    </head>
+    <title>keloud</title>
+    <style type="text/css">
+        <!--
+        @import url("https://global.keloud.ir/mail/activation/font/stylesheet.css");
+
+        * {
+            font-family: Tahoma, Geneva, sans-serif;
+        }
+
+        img {
+            border: 0;
+        }
+
+        #page {
+            width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        #logo {
+            float: left;
+            margin: 0;
+        }
+
+        #address {
+            height: 181px;
+            margin-left: 250px;
+            float: right;
+        }
+
+        table {
+            width: 100%;
+            border-color: #F00;
+        }
+
+        td {
+            padding: 5px;
+            border-color: #891210;
+        }
+
+        tr.odd {
+            background: #e1ffe1;
+        }
+
+        -->
+    </style>
+</head>
+<body>
+<div id="page">
+    <div id="logo">
+        <img src="http://keloud.ir/email/header.png" width="100%">
+    </div>
+    <!--end logo-->
+    <div style="margin-right:auto; margin-left:auto; display:block; text-align:center;">
+        <h1 style="color:#000; font-family: 'B Yekan', Tahoma, Arial; font-size:25px;">سامانه مدیریت ناوگان کاوه</h1>
+        <img src="http://keloud.ir/email/locations.png"/>
+    </div>
+    <!--end address-->
+    <div id="content">
+        <br>
+        <br>
+        <table border="1" style="float:right; text-align:right; width: 100%;direction:rtl;">
+            <tbody>
+            </tr>
+            <td style="background-color:#CDCDCD; color:#000;">دلیل اطلاع رسانی :</td>
+            <td style="background-color:#CDCDCD; color:#000;">سرعت غیر مجاز</td>
+            </tr>
+            </tr>
+            <td style="background-color:#CDCDCD; color:#000;">سرعت :</td>
+            <td style="background-color:#CDCDCD; color:#000;"><%= speed %></td>
+            </tr>
+            <tr>
+                <td colspan="2"><img src="http://keloud.ir/email/speed.png"
+                                     style="display:block; margin-right:auto; margin-left:auto;"/></td>
+            </tbody>
+        </table>
+        <table border="1" style="float:right; text-align:right; width: 100%;direction:rtl;">
+            <tbody>
+                <tr>
+                    <td class="header">شماره سیم کارت</td>
+                    <td><%= simNumber %></td>
+                </tr>
+                <tr>
+                    <td class="header">IMEI</td>
+                    <td><%= IMEI %></td>
+                </tr>
+                <tr>
+                    <td class="header">نام راننده</td>
+                    <td><%= driverName %></td>
+                </tr>
+                <tr>
+                    <td class="header">پلاک</td>
+                    <td><%= plate %></td>
+                </tr>
+                <tr>
+                    <td class="header">شماره تلفن راننده</td>
+                    <td><%= driverPhone %></td>
+                </tr>
+                <tr>
+                    <td class="header">آخرین موقعیت</td>
+                    <td><%= lastLocation %></td>
+                </tr>
+                <tr>
+                    <td class="header">زمان آخرین موقعیت</td>
+                    <td><%= lastLocationDate %></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin-right:auto; margin-left:auto; display:block; text-align:center; font-family:'B Koodak', Tahoma, Arial;">
+            <br>
+            <hr>
+            <hr>
+            شرکت بلور کاوه | تلفن تماس: 84400 | نشانی: تهران- انتهای اتوبان امام علی شمال- بلوار اوشان (مژدی)-پلاک 4
+            ساختمان کاوه <br/>
+            <img src="http://keloud.ir/email/footer.png" width="100%"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

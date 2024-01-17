@@ -1,0 +1,110 @@
+doctype html
+html(lang='en')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(charset='utf-8')
+    head
+        title report
+        style(type='text/css').
+            .datagrid table {
+                border-collapse: collapse;
+                text-align: left;
+                width: 100%;
+            }
+
+            .datagrid {
+                font: normal 12px/150% Arial, Helvetica, sans-serif;
+                background: #fff;
+                overflow: hidden;
+                border: 1px solid #006699;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+            }
+
+            .datagrid table td, .datagrid table th {
+                padding: 3px 10px;
+            }
+
+            .datagrid table th{
+                border: 1px solid #E1EEF4;
+                background-color: #eeeeee;
+                font-style: tahoma;
+                font-size: 10px;
+                font-weight: bold;
+            }
+
+            .datagrid table tbody td {
+                color: #00557F;
+                border: 1px solid #E1EEF4;
+                font-size: 10px;
+                font-weight: normal;
+                text-align: right;
+            }
+
+            .datagrid th{
+                font-size: 10px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .datagrid table tbody .alt td {
+                background: #E1EEf4;
+                color: #00557F;
+            }
+
+            .datagrid table tbody td:first-child {
+                border-left: none;
+            }
+
+            .header {
+                background-color: #eeeeee;
+            }
+    body
+        .datagrid
+            table
+                tbody
+                    tr
+                        td #{reportname}
+                        td.header نام گزارش
+                        td #{reportDate}
+                        td.header تاریخ گزارش
+                    tr
+                        td #{reporterTel}
+                        td.header شماره تماس
+                        td #{reporterName}
+                        td.header گزارش گیرنده
+                    tr
+                        td #{groupName}
+                        td.header نام گروه
+                        td #{groupCount}
+                        td.header تعداد دستگاه
+            hr
+            .datagrid
+                table(style='direction:rtl;')
+                    thead
+                        tr
+                            th شماره سیم کارت
+                            th سریال  دستگاه
+                            th نوع وسیله
+                            th زمان آخرین تردد
+                            th آخرین آدرس
+                            th مسافت از تعمیر
+                            th مسافت مجاز برای مراجعه
+
+                    tbody
+                        each device, i in devices
+                            tr
+                                td(width='15%') #{device.simNumber}
+                                td(width='15%') #{device.IMEI}
+                                td(width='10%') #{device.type}
+                                td(width='15%') #{device.lastLocationDate}
+                                td(width='25%') #{device.lastLocationAddress}
+                                td(width='10%') #{device.pmDistance}
+                                td(width='10%') #{device.maxPmDistance}
+
+
+
+//
+   Created by msa on 7/5/16.
+
